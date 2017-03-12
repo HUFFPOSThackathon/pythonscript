@@ -1,5 +1,5 @@
 ############################# API FOR HuffPost Chatbot ##############################
-from bot.models import person,Cons
+from bot.models import person
 def mapLatitudeToPincode(lattitude,longitude):
 	################# give constituency info based on latitude and longitude #######
 	pass
