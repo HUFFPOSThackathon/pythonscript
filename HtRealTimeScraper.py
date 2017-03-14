@@ -47,5 +47,5 @@ def getConstituencyFromPlaceName(state_code,place_name):
 	print constituency_name
 	driver.quit()
 
-######################### Test Function Call #####################################
+######################### Function Call Taking the arguement from the command line  #####################################
 getConstituencyFromPlaceName(sys.argv[1],sys.argv[2])
