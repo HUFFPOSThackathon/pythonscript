@@ -5,6 +5,7 @@ import time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup as bs
+from selenium.webdriver.support import expected_conditions as EC
 ###################### Function for creating a custom webdriver #############
 def create_ch_driver():
   chrome_options = wb.ChromeOptions()
@@ -21,7 +22,7 @@ driver.find_element_by_id('search').send_keys(Keys.RETURN)
 ################## Wait for the page to load and give you the name of the constituency #####################################
 time.sleep(1)
 page_state = driver.execute_script('return document.readyState;') 
-WebDriverWait(driver, 10).until(page_state=="Complete")
+WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'view-candidates')))
 constituency_block=driver.find_element_by_id('status')
 print constituency_block.get_attribute("innerHTML")
 #soup=bs()
